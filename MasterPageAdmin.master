@@ -1,0 +1,115 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPageAdmin.master.vb" Inherits="MasterPageAdmin" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  <style type="text/css">
+        .auto-style1 {
+            height: 39px;
+        }
+        
+    </style>
+</head>
+<body style="background-color:black ; padding-left:100px; padding-right:100px; " >
+    <form id="form1" runat="server">
+    <div>
+        
+        <table border="0"  style="width:100%; background-color:black; color:white ; " >
+            
+            <tr style="position:fixed; width:1135px; background-color:#66ccff;z-index:1000; top:-1px;">
+                
+                <td style="width:0%;">
+                    
+                        <asp:Menu ID="MenuID" Orientation="Horizontal" runat="server" Width="100%" BackColor="#66ccff" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" StaticSubMenuIndent="10px" >
+                        
+                            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#66ccff" />
+                            <DynamicSelectedStyle BackColor="#5D7B9D" />
+                        
+                        <Items  >
+                                 <asp:MenuItem Text="UPLOAD CAR" Value="Upload_Car" NavigateUrl="~/Upload_Car.aspx" Selectable="true"></asp:MenuItem>
+                                <asp:MenuItem Text="ADD ADMIN" Value="Add_admin" NavigateUrl="~/Add_Admin.aspx" Selectable="true" ></asp:MenuItem>
+                            
+
+                        </Items>
+                        
+                  
+                        
+                            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="20" VerticalPadding="12" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                        
+                  
+                        
+                        </asp:Menu>
+                    
+                </td>
+                <td style="width:30%;">
+                   
+                     <asp:Panel ID="anonymous" runat="server">
+                         <asp:HyperLink ID="HyperlinkLogIn" runat="server" NavigateUrl="~/LogIn.aspx" >Login</asp:HyperLink>
+                         <asp:HyperLink ID="HyperlinkSignUp" runat="server" NavigateUrl="~/SignUp.aspx" >Sign up</asp:HyperLink>
+                     </asp:Panel>
+
+
+                    <asp:Panel ID="customer" runat="server" Visible="false">
+
+                         <asp:LinkButton ID="LinkLogout"  CausesValidation="false"  runat="server" >Logout</asp:LinkButton>
+                    
+                                            
+                    </asp:Panel>
+                     <asp:Label ID="lblWelcome" runat="server" ForeColor="Black" Text=""></asp:Label>
+                </td>  
+
+            </tr>
+
+                  <tr style="margin:2% 0 0 0;">
+                <td colspan="3" style="width:100%;">
+                    <br /><br /><br />
+                    <asp:Image ID="Banner" runat="server" ImageUrl="~/Images/b_header.jpg" Width="100%" Height="365px"/>
+                </td>
+           </tr>
+            
+        <tr>
+
+        <td colspan="3" style="width:100%;" class="auto-style1">
+           
+              <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+      
+            </asp:ContentPlaceHolder>
+            
+       
+        </td >
+
+
+            </tr>
+
+
+  
+            <tr>
+            <td style="width:30%">
+                <div>
+                <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/App_Data/Advertisement.xml" />
+           </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" style="background-color:whitesmoke; color:black; text-align:center;">
+         
+                       All right Reserved: CopyRight@2016
+               
+            </td>
+        </tr>
+    </table>
+
+     </div>
+                               
+    </form>
+</body>
+</html>
